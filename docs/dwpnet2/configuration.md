@@ -566,37 +566,6 @@ Example:
 
 ---
 
-## Reader Settings
-
-### Cards
-=== `{ number }`
-A table of Access Levels that are whitelisted to use the reader **At Any Time**.
-
----
-
-Example:
-```lua
-["Cards"] = {"1", "2", "3", "4", "5", "0"},
-```
-
-===
-
-### WhitelistEnabled
-=== `boolean`
-
-Whether to enable or disable the reader whitelist.
-
----
-
-Example:
-```lua
-["WhitelistEnabled"] = false,
-```
-
-
-===
-
----
 
 !!!success Configuration Complete!
 
