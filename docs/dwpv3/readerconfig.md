@@ -11,11 +11,11 @@ authors:
 categories:
   - Whitehill
   - DWProx
-  - Net2+
+  - V3
 ---
 # Configuring Your V3 Readers
 
-![](/static/assets/banners/whg_net2config.png)
+![](/static/assets/banners/whg_v3config.png)
 
 Welcome to customization heaven. (#3)
 
@@ -54,6 +54,51 @@ Example:
 
 
 ===
+
+---
+
+
+## Custom Reader Settings
+
+!!!warning
+These settings apply only to the **Custom Reader**, it will not work on default readers
+!!!
+
+```lua
+    -- / CUSTOM READER SETTINGS / --
+    ["LEDAccept"] = function(Reader)
+        Reader.LEDG.Transparency = 0
+        Reader.LEDS.Transparency = 1
+        Reader.LEDR.Transparency = 1
+    end,
+    ["LEDIdle"] = function(Reader)
+        Reader.LEDG.Transparency = 1
+        Reader.LEDS.Transparency = 0
+        Reader.LEDR.Transparency = 1
+    end,
+    ["LEDDeny"] = function(Reader)
+        Reader.LEDG.Transparency = 1
+        Reader.LEDS.Transparency = 1
+        Reader.LEDR.Transparency = 0
+    end,
+    ["LEDLocked"] = function(Reader)
+        Reader.LEDG.Transparency = 1
+        Reader.LEDS.Transparency = 1
+        Reader.LEDR.Transparency = 0
+    end,
+
+    ["SoundAccept"] = function(Reader)
+        Reader.Body.SoundAccept:Play()
+    end,
+    ["SoundDeny"] = function(Reader)
+        Reader.Body.SoundDeny:Play()
+    end,
+
+    -- / SYSTEM / --
+    ["ReaderSpec"] = "CUSTOM" -- DO NOT TOUCH THIS! System Will Break
+}
+return Settings
+```
 
 ---
 
